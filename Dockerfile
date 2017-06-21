@@ -8,6 +8,8 @@ RUN apk update && \
     curl \
     perl && \
   rm -rf /var/cache/apk/*
+  
+RUN git config --global url."https://bitbucket.org".insteadOf ssh://git@bitbucket.org
 
 ADD drone-git /bin/
 ENTRYPOINT ["/bin/drone-git"]
